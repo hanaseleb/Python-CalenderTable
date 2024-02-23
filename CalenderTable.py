@@ -39,4 +39,4 @@ def create_calender_table(start_date, end_date, first_fiscal_year=None, start_fi
         df['AccountingPeriod'] = df['Date'].apply(lambda x: x.year - first_fiscal_year if x.month >= start_fiscal_month else x.year - first_fiscal_year - 1)
         df['RelativeAccountingPeriod'] = df['AccountingPeriod'] - (today.year - first_fiscal_year)
 
-    return calender_table
+    return df
